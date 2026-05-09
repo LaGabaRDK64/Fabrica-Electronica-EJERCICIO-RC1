@@ -15,7 +15,12 @@ Se encarga de controlar el flujo de la funcion principal usando las funciones y 
 betterio (better input/output) se encarga de realizar validaciones para la entrada del usuario.
 
 # products
-Define los productos y las funciones relacionadas con los mismos
+Define los productos y las funciones relacionadas con los mismos.
+Cada producto tiene un tiempo y recursos necesarios para su fabricacion:
+- Tiempo -> se mide en minutos/unidades
+- Materia prima -> se mide en unidades  
+- Mano de obra -> se mide en hora/unidades
+- Energia -> se mide en kWh/unidades
 
 # production
 Calcula tiempos de produccion y recursos necesarios
