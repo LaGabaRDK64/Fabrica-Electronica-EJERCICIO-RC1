@@ -1,6 +1,15 @@
+#include "products.h"
+#include "production.h"
+#include "tools.h"
+
 int main(){
 
-    printf("nada aun\n");
+    welcomeMsg();
+
+    // Bucle principal del programa
+    
+
+    pause();
 
     return 0;
 }
