@@ -21,4 +21,9 @@ int deleteStrIndx(char str[][25], int index, int arrsize);
 
 // Menu Principal del Programa
 
+
+// Recibe una matriz de caracteres y los compara con la entrada del usuario para mostrar las coincidencias
+// Regresa -1 si no hay coincidencias o el indice de la coincidencia seleccionada por el usuario
+int stringShearch(char Str[][25], int arrsize);
+
 #endif

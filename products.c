@@ -147,7 +147,20 @@ int editProduct(char names[][25], float production_time[], int raw_material[], i
         break;
     } 
 
-
     return 0;
+}
+
+void showProduct(char names[][25], float production_time[], int raw_material[], int labour[], float energy[], int indx){
+
+    printf("\n=======================================");
+    printf("\n\t%-25s\n", names[indx]);
+    printf("=======================================\n");
+    printf("   Tiempo      Materia Prima      Mano de Obra     Energia\n");
+    printf("---------------------------------------\n");
+    printf("    %.2f          %d                 %d           %.2f\n", 
+                production_time[indx],
+                raw_material[indx],
+                labour[indx],
+                energy[indx]);
 
 }
