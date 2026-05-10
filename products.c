@@ -55,7 +55,7 @@ int addProduct(char names[][25], float production_time[], int raw_material[], fl
 
     //pedir la mano de obra necesaria para su produccion
     printf("Mano de Obra (h/pdt) >>> ");
-    labour[*num_pdt]= ENTnumberverification(0.1, 20.0);
+    labour[*num_pdt]= DECnumberverification(0.1, 20.0);
 
     // pedir la energia necesaria para su produccion
     printf("Energia Necesaria (kWh/u) >>> ");
