@@ -11,13 +11,14 @@ void wait(int wait_time);
 void welcomeMsg();
 
 // Elimina un elemento de un arreglo de enteros unidimensional
-int deleteIntIndx(int arr[], int index, int *arrsize);
+int deleteIntIndx(int arr[], int index, int arrsize);
 
 // Elimina un elemento de un arreglo de flotantes unidimensional
-int deleteFloatIndx(float arr[], int index, int *arrsize);
+int deleteFloatIndx(float arr[], int index, int arrsize);
 
 // Elimina una cadena de caracteres dentro de una matriz de caracteres
-int deleteStrIndx(char str[][25], int index, int *arrsize);
+int deleteStrIndx(char str[][25], int index, int arrsize);
 
+// Menu Principal del Programa
 
 #endif
