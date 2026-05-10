@@ -26,6 +26,9 @@ void MENUVIEW();
 //Mensaje opcion seleccionado
 void OPCSELECT(int opc);
 
+/*Mensaje de salida*/
+void MENSAJESALIR();
+
 // Convierte una cadena de caracteres a minusculas
 void strTolower(char string[], char new_str[]);
 
