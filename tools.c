@@ -149,3 +149,46 @@ int stringShearch(char names[][25], int arrsize){
     
     }
 }
+/*Menu informacion : añadir productom eliminar producto calcular eficiencia y salir*/
+
+void MENUVIEW(){
+
+    int numblocklarge = 30;
+    char OptionsTEXT[4][50] = {
+        "Añadir Producto",
+        "Eliminar Producto",
+        "Calcular Eficiencia",
+        "Salir"
+    };
+
+    for (int i = 0; i < numblocklarge; i++)
+    {
+        printf("=");
+    }
+
+    printf("\n");
+
+    for(int i = 0; i < 4; i++){
+        printf("==");
+        printf("   ");
+        printf("%d. %s", i + 1, OptionsTEXT[i]);
+        printf("   ");
+        printf("==");
+    }
+
+    for (int i = 0; i < numblocklarge; i++)
+    {
+        printf("=");
+    }
+
+    printf("\n");
+    
+}
+
+void OPCSELECT(int opc){
+
+    int opcsekect = opc;
+
+    printf("\n---------. Usted ha seleccionado la opcion numero %d .---------\n\n");
+    
+}
