@@ -161,7 +161,7 @@ int stringShearch(char names[][25], int arrsize){
     
     }
 }
-/*Menu informacion : añadir productom eliminar producto calcular eficiencia y salir*/
+
 
 void MENUVIEW(){
 
@@ -200,8 +200,6 @@ void MENUVIEW(){
 
 void OPCSELECT(int opc){
 
-    int opcsekect = opc;
-
-    printf("\n---------. Usted ha seleccionado la opcion numero %d .---------\n\n");
+    printf("\n---------. Usted ha seleccionado la opcion numero %d .---------\n\n", opc);
 
 }

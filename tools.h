@@ -19,7 +19,8 @@ int deleteFloatIndx(float arr[], int index, int arrsize);
 // Elimina una cadena de caracteres dentro de una matriz de caracteres
 int deleteStrIndx(char str[][25], int index, int arrsize);
 
-// Menu Principal del Programa
+
+/*Menu informacion : añadir producto eliminar producto calcular eficiencia y salir*/
 void MENUVIEW();
 
 //Mensaje opcion seleccionado

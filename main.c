@@ -7,12 +7,12 @@ int main(){
 
     int opcmain; /* >>>> Opcion seleccionada para el switch*/
 
-    char nameproductmain[15][25]; /*Puede almacenar hasta 15 nombres, con 25 caracteres*/
-    float tiempodeproduccion[15]  = {0}; /* >>>> Puedes agregar el tiempo de produccion de cada producto (max >>> 15)*/
-    float materiaprima[15] = {0}; /* >>>> Informacion materia prima necesaria para cada producto (de cada producto individual)*/
-    float energiatotal[15] = {0}; /* >>>> Informacion de la energia total de cada producto (de manera individual)*/
-    int numerosdeproductos = 0; /* >>> Cantidad de prodcutos almacenadas en el sistema, numero maximo de prodcutos 15*/
-    float trabajo[15] = {0}; /* >>>> Numero de trabajo requerido para cada producto (de manera individual)*/
+    char nameproductmain[5][25]; /*Puede almacenar hasta 5 nombres, con 25 caracteres*/
+    float tiempodeproduccion[5]  = {0}; /* >>>> Puedes agregar el tiempo de produccion de cada producto (max >>> 5)*/
+    float materiaprima[5] = {0}; /* >>>> Informacion materia prima necesaria para cada producto (de cada producto individual)*/
+    float energiatotal[5] = {0}; /* >>>> Informacion de la energia total de cada producto (de manera individual)*/
+    int numerosdeproductos = 0; /* >>> Cantidad de prodcutos almacenadas en el sistema, numero maximo de prodcutos 5*/
+    float trabajo[5] = {0}; /* >>>> Numero de trabajo requerido para cada producto (de manera individual)*/
 
     welcomeMsg();
 
