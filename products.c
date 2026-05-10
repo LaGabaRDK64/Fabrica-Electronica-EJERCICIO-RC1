@@ -3,22 +3,22 @@
 #include "betterio.h"
 #include <stdio.h>
 
-int showProducts(char names[][25], float production_time[], int raw_material[], int labour[], float energy[], int *num_pdt){
+int showProducts(char names[][25], float production_time[], int raw_material[], float labour[], float energy[], int *num_pdt){
 
     if(*num_pdt == 0){
 
         return 1;
     }
 
-    printf("=======================================\n");
-    printf("               PRODUCTOS               \n");
-    printf("=======================================\n");
+    printf("=====================================================================================================================\n");
+    printf("                                                    PRODUCTOS\n");
+    printf("=====================================================================================================================\n");
 
-    printf("%-4s %-25s %-20s %-20s %-20s %-20s\n", "Num", "PRODUCTOS", "TIEMPO (min/u)", "MATERIA PRIMA (u)", "MANO DE OBRA (h/u)", "ENERGIA (kWh/u)");
+    printf("%-4s  %-25s %-20s %-20s %-20s %-20s\n", "Idc", "PRODUCTOS", "TIEMPO (min/u)", "MATERIA PRIMA (u)", "MANO DE OBRA (h/u)", "ENERGIA (kWh/u)");
 
     for(int i=0; i<*num_pdt; i++){
 
-        printf(" (%d) %-25s %-20f %-20d %-20d %-20f\n",
+        printf(" (%d)  %-25s %-20.3f %-20d %-20.3f %-20.3f\n",
         i,
         names[i],
         production_time[i],
@@ -33,7 +33,7 @@ int showProducts(char names[][25], float production_time[], int raw_material[], 
 
 }
 
-int addProduct(char names[][25], float production_time[], int raw_material[], int labour[], float energy[], int *num_pdt){
+int addProduct(char names[][25], float production_time[], int raw_material[], float labour[], float energy[], int *num_pdt){
 
     if(*num_pdt == 5){
         return 1;
@@ -55,20 +55,20 @@ int addProduct(char names[][25], float production_time[], int raw_material[], in
 
     //pedir la mano de obra necesaria para su produccion
     printf("Mano de Obra (h/pdt) >>> ");
-    labour[*num_pdt]= ENTnumberverification(1, 20);
+    labour[*num_pdt]= ENTnumberverification(0.1, 20.0);
 
     // pedir la energia necesaria para su produccion
     printf("Energia Necesaria (kWh/u) >>> ");
     energy[*num_pdt]= DECnumberverification(0.1, 5000.0);
 
     //aumentar en 1 la cantidad de productos
-    *num_pdt++;
+    (*num_pdt)++;
 
     return 0;
 
 }
 
-int deleteProduct(char names[][25], float production_time[], int raw_material[], int labour[], float energy[], int *num_pdt){
+int deleteProduct(char names[][25], float production_time[], int raw_material[], float labour[], float energy[], int *num_pdt){
 
     if(*num_pdt == 0){
         return 1;
@@ -81,9 +81,9 @@ int deleteProduct(char names[][25], float production_time[], int raw_material[],
     showProducts(names, production_time, raw_material, labour, energy, num_pdt);
 
     //pedir el indice de uno de los productos
-    printf("Ingrese el indice del producto\n");
+    printf("\nIngrese el indice del producto a eliminar\n");
     printf("Producto >>> ");
-    indx= ENTnumberverification(0, *num_pdt);
+    indx= ENTnumberverification(0, (*num_pdt)-1);
 
     //eliminar dicho producto moviendo todos los datos posteriores un indice a la izquierda (funcion incluida en tools.h)
     deleteStrIndx(names, indx, *num_pdt);
@@ -99,24 +99,28 @@ int deleteProduct(char names[][25], float production_time[], int raw_material[],
 
 }
 
-int editProduct(char names[][25], float production_time[], int raw_material[], int labour[], float energy[], int *num_pdt){
+int editProduct(char names[][25], float production_time[], int raw_material[], float labour[], float energy[], int *num_pdt){
 
     if(*num_pdt == 0){
         return 1;
 
     }
 
-    //presentar un menu con todos los productos y sus caracteristicas
-    showProducts(names, production_time, raw_material, labour, energy, num_pdt);
+    //permitir al usuario buscar un producto en especifico y guardar el indice del producto elegido
+    int indx= stringShearch(names, *num_pdt);
 
-    //pedir el indice de uno de los productos
-    int indx;
-    printf("Ingrese el indice del producto\n");
-    printf("Producto >>> ");
-    indx= ENTnumberverification(0, *num_pdt);
+    //verificar si hubo coincidencias
+    if(indx < 0){
 
-    //mostrar un menu con todos los datos del producto y solicitar el dato a cambiar
+        return -1;
+    }
+
+    showProduct(names, production_time, raw_material, labour, energy, indx); //mostrar el producto seleccionado para editar sus datos
+    wait(1750);
+
+    //mostrar un menu con todos los datos de producto y solicitar el dato a cambiar
     int option= 0;
+    printf("\n Ingrese el dato del producto que desea cambiar\n");
     printf("\n(1) Nombre\n(2) Tiempo de Produccion\n(3) Materia Prima\n(4) Mano de Obra\n(5) Energia\n");
     printf("Opcion >>> ");
     option= ENTnumberverification(1, 5);
@@ -142,9 +146,9 @@ int editProduct(char names[][25], float production_time[], int raw_material[], i
 
         break;
     case 4:
-        printf("Mano de Obra Actual >>> %d\n", labour[indx]);
+        printf("Mano de Obra Actual >>> %.2f\n", labour[indx]);
         printf("Nuevo Valor >>> ");
-        labour[indx]= ENTnumberverification(1, 20);
+        labour[indx]= DECnumberverification(0.1, 20.0);
 
         break;
     case 5:
@@ -162,14 +166,14 @@ int editProduct(char names[][25], float production_time[], int raw_material[], i
     return 0;
 }
 
-void showProduct(char names[][25], float production_time[], int raw_material[], int labour[], float energy[], int indx){
+void showProduct(char names[][25], float production_time[], int raw_material[], float labour[], float energy[], int indx){
 
     printf("\n=======================================");
     printf("\n\t%-25s\n", names[indx]);
     printf("=======================================\n");
     printf("   Tiempo      Materia Prima      Mano de Obra     Energia\n");
     printf("---------------------------------------\n");
-    printf("    %.2f          %d                 %d           %.2f\n", 
+    printf("    %.2f          %d                 %.2f           %.2f\n", 
                 production_time[indx],
                 raw_material[indx],
                 labour[indx],

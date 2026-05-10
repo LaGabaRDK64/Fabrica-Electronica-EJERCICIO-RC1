@@ -155,7 +155,7 @@ int stringShearch(char names[][25], int arrsize){
 
         }
         printf(" Producto >>> ");
-        option= ENTnumberverification(0, 5);
+        option= ENTnumberverification(0, (arrsize-1));
 
         return option;
     
@@ -166,21 +166,22 @@ int stringShearch(char names[][25], int arrsize){
 void MENUVIEW(){
 
     int numblocklarge = 30;
-    char OptionsTEXT[5][50] = {
+    char OptionsTEXT[6][50] = {
         "Anadir Producto",
         "Eliminar Producto",
-        "Editar Lista de Productos",
+        "Mostrar Productos",
+        "Editar Productos",
         "Calcular Eficiencia",
         "Salir"
     };
 
-    printf("\n ============================\n");
-    for(int i = 0; i < 5; i++){
+    printf("\n ============ MENU ===========\n");
+    for(int i = 0; i < 6; i++){
         printf("\n");
         printf("%d. %s", i + 1, OptionsTEXT[i]);
     }
     printf("\n\n ============================\n");
-    printf("\n Ponga su opcion aqui >>>> \n");
+    printf("\n Ponga su opcion aqui >>>> ");
 }
 
 void OPCSELECT(int opc){

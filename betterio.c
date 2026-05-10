@@ -68,26 +68,26 @@ int ENTnumberverification(int min, int max){
         }else if (ptr == buffer)
         {
 
-            printf("||| ERROR ||| : El programa no admite letras ");
+            printf("||| ERROR ||| : El programa no admite letras \n");
             printf("Porfavor vuelva a ingresar su opcion aqui >>>> ");
 
         }else if (*ptr != '\n' && *ptr != '\0')
         {
             
-            printf("||| ERROR ||| : El programa no admite ese tipo de valor");
+            printf("||| ERROR ||| : El programa no admite ese tipo de valor\n");
             printf("Porfavor vuelva a ingresar su opcion aqui >>>> ");
 
         }
         else if(num < min)
         {
 
-            printf("||| ERROR ||| : El programa no admite numeros menores a %d ", min);
+            printf("||| ERROR ||| : El programa no admite numeros menores a %d \n", min);
             printf("Porfavor vuelva a ingresar su opcion aqui >>>> ");
 
         }else if (num > max)
         {
 
-            printf("||| ERROR ||| : El programa no admite numeros mayores a %d ", max);
+            printf("||| ERROR ||| : El programa no admite numeros mayores a %d \n", max);
             printf("Porfavor vuelva a ingresar su opcion aqui >>>> ");
 
         }
@@ -100,7 +100,7 @@ int ENTnumberverification(int min, int max){
 
 /*Validacion de entrada numerica (Con numeros enteros)entre un minimo y un maximo*/
 
-float DECnumberverification(int min, int max){
+float DECnumberverification(float min, float max){
 
     float num;
     char buffer[25];
@@ -121,26 +121,26 @@ float DECnumberverification(int min, int max){
         }else if (ptr == buffer)
         {
 
-            printf("||| ERROR ||| : El programa no admite letras ");
+            printf("||| ERROR ||| : El programa no admite letras \n");
             printf("Porfavor vuelva a ingresar su opcion aqui >>>> ");
 
         }else if (*ptr != '\n' && *ptr != '\0')
         {
             
-            printf("||| ERROR ||| : El programa no admite ese tipo de valor");
+            printf("||| ERROR ||| : El programa no admite ese tipo de valor\n");
             printf("Porfavor vuelva a ingresar su opcion aqui >>>> ");
 
         }
         else if(num < min)
         {
 
-            printf("||| ERROR ||| : El programa no admite numeros menores a %d ", min);
+            printf("||| ERROR ||| : El programa no admite numeros menores a %f \n", min);
             printf("Porfavor vuelva a ingresar su opcion aqui >>>> ");
 
         }else if (num > max)
         {
 
-            printf("||| ERROR ||| : El programa no admite numeros mayores a %d ", max);
+            printf("||| ERROR ||| : El programa no admite numeros mayores a %f \n", max);
             printf("Porfavor vuelva a ingresar su opcion aqui >>>> ");
 
         }
