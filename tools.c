@@ -167,35 +167,20 @@ void MENUVIEW(){
 
     int numblocklarge = 30;
     char OptionsTEXT[5][50] = {
-        "Añadir Producto",
+        "Anadir Producto",
         "Eliminar Producto",
         "Editar Lista de Productos",
         "Calcular Eficiencia",
         "Salir"
     };
 
-    for (int i = 0; i < numblocklarge; i++)
-    {
-        printf("=");
-    }
-
-    printf("\n");
-
+    printf("\n ============================\n");
     for(int i = 0; i < 5; i++){
-        printf("==");
-        printf("   ");
+        printf("\n");
         printf("%d. %s", i + 1, OptionsTEXT[i]);
-        printf("   ");
-        printf("==");
     }
-
-    for (int i = 0; i < numblocklarge; i++)
-    {
-        printf("=");
-    }
-
-    printf("\n");
-    
+    printf("\n ============================\n");
+    printf("\n Ponga su opcion aqui >>>> \n");
 }
 
 void OPCSELECT(int opc){

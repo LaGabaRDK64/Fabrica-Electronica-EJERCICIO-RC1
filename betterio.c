@@ -47,7 +47,7 @@ void eliminatespace(char word[]){
 
 /*Validacion de entrada numerica (Con numeros enteros)entre un minimo y un maximo*/
 
-int ENTnumberverification(int max, int min){
+int ENTnumberverification(int min, int max){
 
     int num;
     char buffer[25];
@@ -100,7 +100,7 @@ int ENTnumberverification(int max, int min){
 
 /*Validacion de entrada numerica (Con numeros enteros)entre un minimo y un maximo*/
 
-float DECnumberverification(int max, int min){
+float DECnumberverification(int min, int max){
 
     float num;
     char buffer[25];
