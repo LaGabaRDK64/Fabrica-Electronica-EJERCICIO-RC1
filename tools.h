@@ -20,7 +20,10 @@ int deleteFloatIndx(float arr[], int index, int arrsize);
 int deleteStrIndx(char str[][25], int index, int arrsize);
 
 // Menu Principal del Programa
+void MENUVIEW();
 
+//Mensaje opcion seleccionado
+void OPCSELECT(int opc);
 
 // Convierte una cadena de caracteres a minusculas
 void strTolower(char string[], char new_str[]);
