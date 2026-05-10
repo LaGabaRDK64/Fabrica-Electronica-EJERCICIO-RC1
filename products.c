@@ -89,7 +89,7 @@ int deleteProduct(char names[][25], float production_time[], int raw_material[],
     deleteStrIndx(names, indx, *num_pdt);
     deleteFloatIndx(production_time, indx, *num_pdt);
     deleteIntIndx(raw_material, indx, *num_pdt);
-    deleteIntIndx(labour, indx, *num_pdt);
+    deleteFloatIndx(labour, indx, *num_pdt);
     deleteFloatIndx(energy, indx, *num_pdt);
 
     //disminuir la cantidad de productos
