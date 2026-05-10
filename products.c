@@ -1,6 +1,7 @@
 #include "products.h"
 #include "tools.h"
 #include "betterio.h"
+#include <stdio.h>
 
 int showProducts(char names[][25], float production_time[], int raw_material[], int labour[], float energy[], int *num_pdt){
 

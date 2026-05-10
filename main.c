@@ -21,11 +21,11 @@ int main(){
         MENUVIEW();
         opcmain = ENTnumberverification(1,5);
         OPCSELECT(opcmain);
-        switch (opcmain)
-        {
+        
+        switch (opcmain){
         case 1:
             
-            pause();
+            
         
             /*Añadir producto*/
 
