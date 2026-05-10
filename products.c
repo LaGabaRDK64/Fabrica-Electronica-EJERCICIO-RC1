@@ -1,5 +1,6 @@
 #include "products.h"
 #include "tools.h"
+#include "betterio.h"
 
 int showProducts(char names[][25], float production_time[], int raw_material[], int labour[], float energy[], int *num_pdt){
 
@@ -41,20 +42,23 @@ int addProduct(char names[][25], float production_time[], int raw_material[], in
     //guardar los datos en el siguiente espacio segun num_pdt
     //pedir nombre del producto
     printf("Nombre del Producto >>> ");
-    
+    stringverification(names[*num_pdt]);
 
     //pedir el tiempo necesario para su produccion
     printf("Tiempo de Produccion (min) >>> ");
+    production_time[*num_pdt]= DECnumberverification(0.1, 600.0);
 
     //pedir la materia prima necesaria para su produccion
     printf("Materia Prima (unidades) >>> ");
+    raw_material[*num_pdt] = ENTnumberverification(1, 1000);
 
     //pedir la mano de obra necesaria para su produccion
     printf("Mano de Obra (h/pdt) >>> ");
-
+    labour[*num_pdt]= ENTnumberverification(1, 20);
 
     // pedir la energia necesaria para su produccion
     printf("Energia Necesaria (kWh/u) >>> ");
+    energy[*num_pdt]= DECnumberverification(0.1, 5000.0);
 
     //aumentar en 1 la cantidad de productos
     *num_pdt++;
@@ -78,7 +82,7 @@ int deleteProduct(char names[][25], float production_time[], int raw_material[],
     //pedir el indice de uno de los productos
     printf("Ingrese el indice del producto\n");
     printf("Producto >>> ");
-
+    indx= ENTnumberverification(0, *num_pdt);
 
     //eliminar dicho producto moviendo todos los datos posteriores un indice a la izquierda (funcion incluida en tools.h)
     deleteStrIndx(names, indx, *num_pdt);
@@ -108,37 +112,44 @@ int editProduct(char names[][25], float production_time[], int raw_material[], i
     int indx;
     printf("Ingrese el indice del producto\n");
     printf("Producto >>> ");
+    indx= ENTnumberverification(0, *num_pdt);
 
     //mostrar un menu con todos los datos del producto y solicitar el dato a cambiar
     int option= 0;
     printf("\n(1) Nombre\n(2) Tiempo de Produccion\n(3) Materia Prima\n(4) Mano de Obra\n(5) Energia\n");
     printf("Opcion >>> ");
+    option= ENTnumberverification(1, 5);
 
     // actualizar los datos
     switch (option){
     case 1:
         printf("Nombre Actual >>> %-20s\n", names[indx]);
         printf("Nuevo Nombre >>> ");
+        stringverification(names[indx]);
 
         break;
     case 2:
         printf("Tiempo Actual >>> %.2f\n", production_time[indx]);
         printf("Nuevo Valor >>> ");
+        production_time[indx]= DECnumberverification(0.1, 600.0);
 
         break;
     case 3:
         printf("Unidades de Materia Prima Actual >>> %d\n", raw_material[indx]);
         printf("Nuevo Valor >>> ");
+        raw_material[indx] = ENTnumberverification(1, 1000);
 
         break;
     case 4:
         printf("Mano de Obra Actual >>> %d\n", labour[indx]);
         printf("Nuevo Valor >>> ");
+        labour[indx]= ENTnumberverification(1, 20);
 
         break;
     case 5:
         printf("Energia Necesaria Actual >>> %.2f\n", energy[indx]);
         printf("Nuevo Valor >>> ");
+         energy[indx]= DECnumberverification(0.1, 5000.0);
 
         break;
     default:

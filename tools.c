@@ -1,12 +1,13 @@
 #include "tools.h"
+#include "betterio.h"
 #include <stdio.h>
 #include <windows.h>
 #include <string.h>
 
 void pause(){
 
-    getchar();
     printf("\nIngrese una tecla para continuar...\n");
+    getchar();
 
 }
 
@@ -79,6 +80,17 @@ int deleteStrIndx(char str[][25], int index, int arrsize){
 
 }
 
+void strTolower(char string[], char new_str[]) {
+    int i = 0;
+    // Convertir cada caracter a minuscula y guardarlo en new_str
+    while(string[i]) {
+        new_str[i] = tolower((unsigned char)string[i]);
+        i++;
+    }
+    // AGREGRAR al nuevo string el caracter '\0'
+    new_str[i] = '\0'; 
+}
+
 int stringShearch(char names[][25], int arrsize){
 
     // Variables
@@ -94,14 +106,14 @@ int stringShearch(char names[][25], int arrsize){
     printf("     BUSQUEDA DE PRODUCTOS   \n");
     printf(" ============================\n\n");
     printf("Producto: _______________\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b");
-    //scanstr(search);
-    //strTolower(search, normalized_search); //normalizar la busqueda
+    stringverification(search);
+    strTolower(search, normalized_search); //normalizar la busqueda
 
     // buscar coincidencias entre subcadenas y por caracteres
     for(int i=0; i<arrsize; i++){
 
         differences= 0;
-        //strTolower(names[i], normalized_product_name); //normalizar
+        strTolower(names[i], normalized_product_name); //normalizar
 
         // comparar subcadenas //
        if((strstr(normalized_product_name, normalized_search) != NULL) ||(strstr(normalized_search, normalized_product_name) != NULL) ){
@@ -143,7 +155,7 @@ int stringShearch(char names[][25], int arrsize){
 
         }
         printf(" Producto >>> ");
-        //option= scandVerify_int();
+        option= ENTnumberverification(0, 5);
 
         return option;
     

@@ -25,6 +25,9 @@ void MENUVIEW();
 //Mensaje opcion seleccionado
 void OPCSELECT(int opc);
 
+// Convierte una cadena de caracteres a minusculas
+void strTolower(char string[], char new_str[]);
+
 // Recibe una matriz de caracteres y los compara con la entrada del usuario para mostrar las coincidencias
 // Regresa -1 si no hay coincidencias o el indice de la coincidencia seleccionada por el usuario
 int stringShearch(char Str[][25], int arrsize);
