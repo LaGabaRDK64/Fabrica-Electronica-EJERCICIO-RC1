@@ -179,7 +179,7 @@ void MENUVIEW(){
         printf("\n");
         printf("%d. %s", i + 1, OptionsTEXT[i]);
     }
-    printf("\n ============================\n");
+    printf("\n\n ============================\n");
     printf("\n Ponga su opcion aqui >>>> \n");
 }
 
@@ -187,4 +187,9 @@ void OPCSELECT(int opc){
 
     printf("\n---------. Usted ha seleccionado la opcion numero %d .---------\n\n", opc);
 
+}
+void MENSAJESALIR(){
+
+    printf("\n---------. Usted ha salido exitosamente del programa .---------\n");
+    printf("\n---------.              Vuelva pronto                .---------\n");
 }

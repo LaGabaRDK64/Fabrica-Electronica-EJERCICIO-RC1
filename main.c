@@ -56,7 +56,7 @@ int main(){
 
         }
 
-    } while (opcmain != 4);
+    } while (opcmain != 5);
 
     return 0;
 }
