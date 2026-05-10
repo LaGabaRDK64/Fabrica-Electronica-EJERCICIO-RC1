@@ -12,7 +12,7 @@ int main(){
     do
     {
         MENUVIEW();
-        opcmain = ENTnumberverification(1,4);
+        opcmain = ENTnumberverification(1,5);
         OPCSELECT(opcmain);
         switch (opcmain)
         {

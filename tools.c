@@ -154,9 +154,10 @@ int stringShearch(char names[][25], int arrsize){
 void MENUVIEW(){
 
     int numblocklarge = 30;
-    char OptionsTEXT[4][50] = {
+    char OptionsTEXT[5][50] = {
         "Añadir Producto",
         "Eliminar Producto",
+        "Editar Lista de Productos",
         "Calcular Eficiencia",
         "Salir"
     };
@@ -168,7 +169,7 @@ void MENUVIEW(){
 
     printf("\n");
 
-    for(int i = 0; i < 4; i++){
+    for(int i = 0; i < 5; i++){
         printf("==");
         printf("   ");
         printf("%d. %s", i + 1, OptionsTEXT[i]);
@@ -190,5 +191,5 @@ void OPCSELECT(int opc){
     int opcsekect = opc;
 
     printf("\n---------. Usted ha seleccionado la opcion numero %d .---------\n\n");
-    
+
 }
