@@ -13,5 +13,6 @@ int deleteProduct(char names[][25], float production_time[], int raw_material[],
 // Edita valores de las listas de productos
 int editProduct(char names[][25], float production_time[], int raw_material[], int labour[], float energy[], int *num_pdt);
 
+void showProduct(char names[][25], float production_time[], int raw_material[], int labour[], float energy[], int indx);
 
 #endif
