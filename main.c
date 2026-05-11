@@ -88,6 +88,13 @@ int main(){
 
                 } else {
 
+                    //ingresar demanda de cada producto
+                    for (int i = 0; i < numero_de_productos; i++) {
+
+                        printf("Demanda de %s: ", nameproducts[i]);
+                        demanda[i] = ENTnumberverification(0, 1000000);
+                    }
+
                     tiempoTotal = calcularTiempoTotal(demanda,
                                                         tiempodeproduccion,
                                                         numero_de_productos);
