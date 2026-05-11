@@ -15,6 +15,12 @@ int main(){
     int numero_de_productos = 0; /* >>> Cantidad de prodcutos almacenadas en el sistema, numero maximo de prodcutos 5*/
     float trabajo[5] = {0}; /* >>>> Numero de trabajo requerido para cada producto (de manera individual)*/
 
+    float tiempoTotal;
+    float materiaPrimaTotal;
+    float manoObraTotal;
+    float energiaTotal;
+    int demanda[5] = {0}; /* >>>> Demanda de cada producto (de manera individual)*/
+
     welcomeMsg();
     wait(1500);
 
@@ -76,6 +82,47 @@ int main(){
         
         case 5:
 
+             if (numero_de_productos == 0) {
+
+                    printf("No existen productos registrados\n");
+
+                } else {
+
+                    tiempoTotal = calcularTiempoTotal(demanda,
+                                                        tiempodeproduccion,
+                                                        numero_de_productos);
+
+                    materiaPrimaTotal = calcularMateriaPrimaTotal(demanda,
+                                                                  materiaprima,
+                                                                  numero_de_productos);
+
+                    manoObraTotal = calcularManoObraTotal(demanda,
+                                                          trabajo,
+                                                          numero_de_productos);
+
+                    energiaTotal = calcularEnergiaTotal(demanda,
+                                                        energia_necesaria,
+                                                        numero_de_productos);
+
+                    printf("\n===== RESULTADOS =====\n");
+
+                    printf("Tiempo total: %.2f\n",
+                           tiempoTotal);
+
+                    printf("Materia prima total: %.2f\n",
+                           materiaPrimaTotal);
+
+                    printf("Mano de obra total: %.2f\n",
+                           manoObraTotal);
+
+                    printf("Energia total: %.2f\n",
+                           energiaTotal);
+
+                    verificarDemanda(tiempoTotal,
+                                      materiaPrimaTotal,
+                                      manoObraTotal,
+                                      energiaTotal);
+
             pause();
 
             /*Calcular eficiencia (dani aca pon tu parte)*/
@@ -93,6 +140,7 @@ int main(){
         break;
 
         }
+    }
 
     } while (opcmain != 6);
 
