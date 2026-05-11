@@ -154,6 +154,8 @@ int stringShearch(char names[][25], int arrsize){
             printf(" (%d) %-25s \n", results_index[i],names[results_index[i]]);
 
         }
+
+        printf("\nIngrese el indice del producto elegido\n ");
         printf(" Producto >>> ");
         option= ENTnumberverification(0, (arrsize-1));
 

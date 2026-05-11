@@ -130,13 +130,13 @@ float DECnumberverification(float min, float max){
         }else if(num < min)
         {
 
-            printf("||| ERROR ||| : El programa no admite numeros menores a %f \n", min);
+            printf("||| ERROR ||| : El programa no admite numeros menores a %.2f \n", min);
             printf("Porfavor vuelva a ingresar su opcion aqui >>>> ");
 
         }else if (num > max)
         {
 
-            printf("||| ERROR ||| : El programa no admite numeros mayores a %f \n", max);
+            printf("||| ERROR ||| : El programa no admite numeros mayores a %.2f \n", max);
             printf("Porfavor vuelva a ingresar su opcion aqui >>>> ");
 
         }
