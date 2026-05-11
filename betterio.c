@@ -55,7 +55,7 @@ int ENTnumberverification(int min, int max){
 
     do
     {
-        fgets(buffer,5,stdin);
+        fgets(buffer,15,stdin);
         /*El buffer guarda el string*/
         num = strtol(buffer, &ptr , 10);
 
@@ -108,7 +108,7 @@ float DECnumberverification(float min, float max){
 
     do
     {
-        fgets(buffer,5,stdin);
+        fgets(buffer,15,stdin);
         /*El buffer guarda el string*/
         num = strtof(buffer, &ptr);
 
