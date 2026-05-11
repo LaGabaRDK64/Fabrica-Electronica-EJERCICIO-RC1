@@ -57,7 +57,6 @@ int ENTnumberverification(int min, int max){
     {
         fgets(buffer,5,stdin);
         /*El buffer guarda el string*/
-        num = strtol(buffer, &ptr , 10);
 
         if(buffer[0] == ' ' || buffer[0] == '\n')
         {
@@ -65,7 +64,11 @@ int ENTnumberverification(int min, int max){
             printf("||| ERROR ||| : El programa no admite espacios en blanco \n");
             printf("Porfavor vuelva a ingresar su opcion aqui >>>> ");
 
-        }else if (ptr == buffer)
+        }
+
+        num = strtol(buffer, &ptr , 10);
+        
+        if(ptr == buffer)
         {
 
             printf("||| ERROR ||| : El programa no admite letras \n");
@@ -92,7 +95,7 @@ int ENTnumberverification(int min, int max){
 
         }
 
-    }while (num < min || num > max || ptr == buffer);
+    }while (num < min || num > max || ptr == buffer || *ptr != '\n' && *ptr != '\0' || buffer[0] == ' ' || buffer[0] == '\n');
 
     return num;
 
@@ -124,14 +127,7 @@ float DECnumberverification(float min, float max){
             printf("||| ERROR ||| : El programa no admite letras \n");
             printf("Porfavor vuelva a ingresar su opcion aqui >>>> ");
 
-        }else if (*ptr != '\n' && *ptr != '\0')
-        {
-            
-            printf("||| ERROR ||| : El programa no admite ese tipo de valor\n");
-            printf("Porfavor vuelva a ingresar su opcion aqui >>>> ");
-
-        }
-        else if(num < min)
+        }else if(num < min)
         {
 
             printf("||| ERROR ||| : El programa no admite numeros menores a %f \n", min);
@@ -145,7 +141,7 @@ float DECnumberverification(float min, float max){
 
         }
 
-    }while (num < min || num > max || ptr == buffer);
+    }while (num < min || num > max || ptr == buffer || buffer[0] == ' ' || buffer[0] == '\n');
 
     return num;
 
