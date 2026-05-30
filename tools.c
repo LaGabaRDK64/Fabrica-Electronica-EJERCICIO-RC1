@@ -127,7 +127,7 @@ int stringShearch(char names[][25], int arrsize){
             
             for(int j = 0; j < strlen(normalized_search); j++){
 
-                if(normalized_product_name[i] != normalized_search[i]){
+                if(normalized_product_name[j] != normalized_search[j]){
                     differences++;
                 }
             }
